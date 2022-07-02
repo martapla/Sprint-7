@@ -1,17 +1,28 @@
-
+import React from 'react';
+import Navbar from './components/navbar';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h3>What do you want to do?</h3>
-      <div className = "boxes">
-      <input type="checkbox" id ="web"/>Website (500€)
-      <input type="checkbox" id ="seo"/>SEO Consulting (300€)
-      <input type="checkbox" id ="adds"/>Google Adds Campaign (200€)
-      <p>Total : </p>
+    <div>
+      <header>
+        <Navbar pages={[
+          {
+            name: 'Inicio',
+            link: '#',
+            isActive: true,
+          },
+          {
+            name: 'Checkbox',
+            link: '/checkbox',
+            isActive: false,
+          }
+        ]} />
+      </header>
+      <div className='container'>
+        <h1>Welcome!</h1> <br/>
+        <h2>Choose what service do you need and calculate your budget.</h2>
       </div>
-     
     </div>
   );
 }
